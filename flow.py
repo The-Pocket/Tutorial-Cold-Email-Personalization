@@ -57,6 +57,12 @@ class ContentRetrievalNode(BatchNode):
         content = get_html_content(url)
         return {"url": url, "content": content}
     
+    def exec_fallback(self, prep_res, exc):
+        # This is called after all retries are exhausted
+        url = prep_res["url"]  # Extract URL from the prep_res input pair
+        logger.error(f"Failed to retrieve content from {url} after all retries: {exc}")
+        return {"url": url, "content": None}
+    
     def post(self, shared, prep_res, exec_res_list):
         # Store only non-empty webpage contents
         valid_contents = [res for res in exec_res_list if res["content"]]
@@ -97,9 +103,11 @@ Format your response as YAML:
 ```yaml
 factors:
     - name: "factor_name"
+    action: "action to take"
     actionable: true/false
     details: "supporting details if actionable"
     - name: "another_factor"
+    action: "action to take"
     actionable: true/false
     details: "supporting details if actionable"
 ```"""
@@ -115,7 +123,7 @@ factors:
         logger.debug(f"Successfully parsed YAML from LLM response for {url}")
         return {"url": url, "analysis": analysis}
     
-    def exec_fallback(self, shared, prep_res, exc):
+    def exec_fallback(self, prep_res, exc):
         # This is called after all retries are exhausted
         url = prep_res["url"]  # Extract URL from the prep_res input pair
         logger.error(f"Failed to analyze content from {url} after all retries: {exc}")
@@ -233,8 +241,8 @@ Only return the opening message, nothing else."""
 logger.info("Initializing flow nodes")
 search_node = SearchPersonNode()
 content_node = ContentRetrievalNode()
-analyze_node = AnalyzeResultsBatchNode(max_retries=3)  # Retry up to 3 times before using fallback
-draft_node = DraftOpeningNode()
+analyze_node = AnalyzeResultsBatchNode(max_retries=2, wait=10)  # Retry up to 3 times before using fallback
+draft_node = DraftOpeningNode(max_retries=3, wait=10)
 
 # Connect nodes in the flow
 logger.info("Connecting nodes in personalization flow")
