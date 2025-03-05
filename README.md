@@ -8,6 +8,7 @@ Doing a cold outreach campaign and want to grab attention from the first sentenc
   <img src="./assets/banner.png" width="700"/>
 </div>
 
+- 🔥 [Try Live Demo](https://pocket-opener-851564657364.us-east1.run.app/)
 
 - Design Doc: [docs/design.md](docs/design.md), Flow Source Code: [flow.py](flow.py)
 
