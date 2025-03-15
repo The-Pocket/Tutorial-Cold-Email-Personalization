@@ -10,14 +10,16 @@ Doing a cold outreach campaign and want to grab attention from the first sentenc
 
 - 🔥 [Try Live Demo](https://pocket-opener-851564657364.us-east1.run.app/)
 
-- Design Doc: [docs/design.md](docs/design.md), Flow Source Code: [flow.py](flow.py)
+- Check out the [Blog Post](https://substack.com/home/post/p-159003722)
 
-- **Built With:** [Pocket Flow](https://github.com/The-Pocket/PocketFlow), a 100-line LLM framework that lets LLM Agents build Apps for you
+## Development Tutorial
 
-- I built this in **just a few hours** using Pocket Flow + Cursor AI, and you can, too.
+- I built using **Agentic Coding**, the fastest development paradigm, where humans simply [design](docs/design.md) and agents [code](flow.py).
 
-- Step-by-Step YouTube Development Tutorial Coming soon! [Subscribe for notification](https://www.youtube.com/@ZacharyLLM?sub_confirmation=1)!
- 
+- The secret weapon is [Pocket Flow](https://github.com/The-Pocket/PocketFlow), a 100-line LLM framework that lets Agents (e.g., Cursor AI) build for you
+  
+- Step-by-step YouTube development tutorial coming soon! [Subscribe for notifications](https://www.youtube.com/@ZacharyLLM?sub_confirmation=1).
+
 ## How to Run
 
 1. Implement `call_llm` in `utils/call_llm.py`, and `search_web` in `utils/search_web.py`.
