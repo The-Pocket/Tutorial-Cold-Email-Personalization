@@ -45,6 +45,14 @@ def main():
         3. Set your preferred message style
         4. Click "Generate Opening" to search the web and generate a personalized message
         """)
+        
+        st.write("---")
+        st.subheader("Open Source")
+        st.write("""
+        This project is fully open sourced at: [GitHub](https://github.com/The-Pocket/Tutorial-Cold-Email-Personalization)
+        
+        This is an example LLM project for [Pocket Flow](https://github.com/The-Pocket/PocketFlow), a 100-line LLM framework
+        """)
     
     # Main interface - inputs
     col1, col2 = st.columns([1, 1])
