@@ -12,9 +12,9 @@ Doing a cold outreach campaign and want to grab attention from the first sentenc
 
 - Check out the [Blog Post](https://substack.com/home/post/p-159003722)
 
-## Development Tutorial
+## I built this in just an hour, and you can, too.
 
-- I built using **Agentic Coding**, the fastest development paradigm, where humans simply [design](docs/design.md) and agents [code](flow.py).
+- I built using [**Agentic Coding**](https://the-pocket.github.io/PocketFlow/guide.html), the fastest development paradigm, where humans simply [design](docs/design.md) and agents [code](flow.py).
 
 - The secret weapon is [Pocket Flow](https://github.com/The-Pocket/PocketFlow), a 100-line LLM framework that lets Agents (e.g., Cursor AI) build for you
   
